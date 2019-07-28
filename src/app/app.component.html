@@ -1,0 +1,18 @@
+<!-- 1. Reactive Form with Two simple Fields -->
+<form [formGroup]="dummyForm" (ngSubmit)="onSubmit()">
+
+  <label>Country : </label>
+  <!-- 2. Call onCountryChange() function on Drop Down value Change -->
+  <select id="country" formControlName="country" (change)="onCountryChange()">
+    <option value="A">Country A</option>
+    <option value="B">Country B</option>
+  </select>
+
+  <br><br>
+
+  <label>County : </label>
+  <input type="text" id="county" formControlName="county">
+  <!-- 3. Show if County Field has Required validator or not -->
+  <span> Required : {{dummyForm.get('county').hasError('required')}}</span>
+
+</form>
